@@ -54,6 +54,7 @@ header > .burger-menu {
 @media (max-width: 992px) {
     header .nav-menu {
         gap: 2rem;
+        z-index: 2;
     }
     header .nav-menu a {
         font-size: 16px;
@@ -112,7 +113,6 @@ header > .burger-menu {
     position: absolute;
     top: 1rem;
     left: 2rem;
-    z-index: 2;
     list-style: none;
     background: rgba(33, 103, 153, 0.554);
     padding: 1rem;
@@ -176,6 +176,26 @@ header > .burger-menu {
 .about .about-content {
     width: 50%;
 }
+
+@media (max-width: 768px) {
+    .about > .container > .row {
+        flex-direction: column;
+    }
+    .about img {
+        width: 400px;
+    }
+    .about .about-content {
+        margin-top: 2rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .about img {
+        width: 100%;
+    }
+}
+
 /* about end */
 
 /* skills start */
