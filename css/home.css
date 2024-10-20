@@ -102,6 +102,46 @@ header > .burger-menu {
 /* MAIN START */
 
 /* hero start */
+.hero > .container > .hero-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.socials-wrapper > .socials-list-wrapper > .socials-list {
+    list-style: none;
+    background: #22699a;
+    padding: 1rem;
+}
+
+.socials-list-wrapper > .socials-list li {
+    margin: 1rem 0;
+    font-size: 30px;
+}
+
+.socials-list li a {
+    color: #fff;
+}
+
+.hero-content > .hero-text-container {
+    position: absolute;
+    top: 25rem;
+    left: 25rem;
+    background: rgba(0, 0, 3, 0.5);
+    width: 600px;
+    height: 250px;
+}
+
+.hero-content > .hero-text-container h1 {
+    text-align: center;
+    margin-top: 6rem;
+    color: #fff;
+    font-family: 'Dancing Script';
+    font-style: italic;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
 /* hero end */
 
 /* about start */
