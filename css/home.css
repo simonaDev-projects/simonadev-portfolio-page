@@ -1,4 +1,90 @@
+/* BASE */
+@import './base/layout.css';
+@import './base/base.css';
+
+/* COMPONENTS */
+
 /* Header start */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+header img {
+    width: 200px;
+}
+
+header .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+header .nav-menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+header .nav-menu a:hover {
+    transform: scale(1.2);
+    transition: 0.8s;
+}
+
+header .nav-menu a:hover:nth-child(5) {
+    transform: scale(1);
+    border: none;
+}
+
+header > .hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    header .nav-menu {
+        gap: 2rem;
+    }
+    header .nav-menu a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header > .hamburger-menu {
+        display: inline-block;
+        color: #222d4f;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    header .nav-menu {
+        display: none;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        top: 9rem;
+        flex-direction: column;
+        align-items: center;
+        background: #222d4f;
+        gap: 0;
+    }
+    header .nav-menu a {
+        color: aliceblue;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    header img {
+        width: 100px;
+    }
+    header .nav-menu {
+        top: 6rem;
+    }
+}
 
 /* Header end */
 
