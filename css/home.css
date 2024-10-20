@@ -109,8 +109,12 @@ header > .burger-menu {
 }
 
 .socials-wrapper > .socials-list-wrapper > .socials-list {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    z-index: 2;
     list-style: none;
-    background: #22699a;
+    background: rgba(33, 103, 153, 0.554);
     padding: 1rem;
 }
 
@@ -123,23 +127,31 @@ header > .burger-menu {
     color: #fff;
 }
 
-.hero-content > .hero-text-container {
-    position: absolute;
-    top: 25rem;
-    left: 25rem;
-    background: rgba(0, 0, 3, 0.5);
-    width: 600px;
-    height: 250px;
+.socials-list li a:hover {
+    color: rgb(253, 59, 92);
+    transition: 0.5s;
 }
 
-.hero-content > .hero-text-container h1 {
-    text-align: center;
-    margin-top: 6rem;
-    color: #fff;
-    font-family: 'Dancing Script';
-    font-style: italic;
-    font-size: 50px;
-    letter-spacing: 2px;
+.hero-content {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .hero > .container > .hero-content {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .socials-wrapper > .socials-list-wrapper > .socials-list {
+        height: 50px;
+        left: 10px;
+        display: flex;
+        gap: 1rem;
+        width: 200px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
 
 /* hero end */
