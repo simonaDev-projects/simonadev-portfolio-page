@@ -128,7 +128,7 @@ header > .burger-menu {
 }
 
 .socials-list li a:hover {
-    color: rgb(253, 59, 92);
+    color: #fd3b5c;
     transition: 0.5s;
 }
 
@@ -157,6 +157,25 @@ header > .burger-menu {
 /* hero end */
 
 /* about start */
+.about > .container > .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.about img {
+    width: 40%;
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.about img:hover {
+    opacity: 1;
+}
+
+.about .about-content {
+    width: 50%;
+}
 /* about end */
 
 /* skills start */
