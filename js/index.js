@@ -1,5 +1,21 @@
 //  Header start 
-// <i class="fa-solid fa-x"></i> keiciasi burgerio menu i x kai paspaudi mygtuka
+// Toggle burger menu button
+const burgerMenuDOM = document.getElementById('burger-menu');
+const burgerIconDOM = document.querySelector('.burger-menu i');
+const navMenuDOM = document.getElementById('nav-menu');
+
+burgerMenuDOM.addEventListener('click', () => {
+if (navMenuDOM.style.display === 'none') {
+   navMenuDOM.style.display = 'flex';
+   burgerIconDOM.classList.add('fa-x');
+} else {
+   navMenuDOM.style.display = 'none'
+   burgerIconDOM.classList.remove('fa-x');
+}
+});
+
+// Generated navigation manu:
+
    //  Header end 
 
    //  MAIN START 
