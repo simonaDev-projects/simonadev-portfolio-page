@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #222d4f;
+    background: #22699a;
     padding: 20px;
 }
 
@@ -76,7 +76,7 @@ header > .burger-menu {
         display: none;
         width: 100%;
         position: absolute;
-        top: 9rem;
+        top: 7rem;
         flex-direction: column;
         align-items: center;
         background: #222d4f;
