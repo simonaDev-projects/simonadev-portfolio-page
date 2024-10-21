@@ -145,7 +145,7 @@ header > .burger-menu {
     }
     .socials-wrapper > .socials-list-wrapper > .socials-list {
         height: 50px;
-        left: 10px;
+        left: 32px;
         display: flex;
         gap: 1rem;
         width: 200px;
@@ -157,9 +157,6 @@ header > .burger-menu {
 /* hero end */
 
 /* about start */
-.about {
-    height: 100vh;
-}
 .about > .row {
     display: flex;
     justify-content: space-between;
@@ -181,7 +178,7 @@ header > .burger-menu {
 }
 
 @media (max-width: 768px) {
-    .about > .container > .row {
+    .about > .row {
         flex-direction: column;
     }
     .about img {
@@ -204,7 +201,6 @@ header > .burger-menu {
 /* skills start */
 .skills {
     background: #222d4f;
-    height: 100vh;
 }
 
 .skills > .row {
@@ -343,6 +339,44 @@ header > .burger-menu {
 
 .menu ul li:hover a {
     color: #ff4886;
+}
+
+@media (max-width: 992px) {
+    .menuToggle.active ~ .menu {
+        width: 600px;
+    }
+    .menu ul {
+        margin-top: 1rem;
+        gap: 50px;
+    }
+    .menu ul li a {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menuToggle {
+        width: 50px;
+        height: 50px;
+    }
+    .menuToggle::before {
+        font-size: 50px;
+    }
+    .menuToggle.active ~ .menu {
+        width: 400px;
+        height: 70px;
+    }
+    .menu {
+        width: 30px;
+        height: 30px;
+    }
+    .menu ul {
+        margin-top: 1rem;
+        gap: 30px;
+    }
+    .menu ul li a {
+        font-size: 2.5rem;
+    }
 }
 /* skills end */
 
