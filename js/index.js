@@ -27,6 +27,12 @@ if (navMenuDOM.style.display === 'none') {
    //  about end 
 
    //  skills start 
+   let menuToggleDOM = document.querySelector('.menuToggle');
+
+menuToggleDOM.addEventListener('click', () => {
+  menuToggleDOM.classList.toggle('active')
+})
+
    //  skills end 
 
    //  projects gallery start 
