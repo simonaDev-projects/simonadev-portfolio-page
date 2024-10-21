@@ -82,6 +82,9 @@ header > .burger-menu {
         background: #222d4f;
         gap: 0;
     }
+    header .nav-menu a:nth-child(5) {
+        background: #22699a;
+    }
     header .nav-menu a {
         color: aliceblue;
         margin: 20px 0;
@@ -632,6 +635,9 @@ form .btn {
 }
 
 @media (max-width: 768px) {
+    .contact .section-title {
+        text-align: center;
+    }
     .contact-form-wrapper form {
         width: 500px;
     }
@@ -655,4 +661,49 @@ form .btn {
 /* MAIN END */
 
 /* footer start */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    border-top: 1px solid #22699a;
+}
+
+.footer-text small {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: #ff4886;
+    border-radius: 0.8rem;
+    transition: 0.5s ease;
+    margin-left: 3rem;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem #ff4886;
+}
+
+.footer-iconTop > a i {
+    font-size: 2.4rem;
+    color: #22699a;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-iconTop > a {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
 /* footer end */

@@ -5,51 +5,52 @@ const burgerIconDOM = document.querySelector('.burger-menu i');
 const navMenuDOM = document.getElementById('nav-menu');
 
 burgerMenuDOM.addEventListener('click', () => {
-if (navMenuDOM.style.display === 'none') {
-   navMenuDOM.style.display = 'flex';
-   burgerIconDOM.classList.add('fa-x');
-} else {
-   navMenuDOM.style.display = 'none'
-   burgerIconDOM.classList.remove('fa-x');
-}
+   if (navMenuDOM.style.display === 'none') {
+      navMenuDOM.style.display = 'flex';
+      burgerIconDOM.classList.add('fa-x');
+   } else {
+      navMenuDOM.style.display = 'none'
+      burgerIconDOM.classList.remove('fa-x');
+   }
 });
 
 // Generated navigation manu:
 
-   //  Header end 
+//  Header end 
 
-   //  MAIN START 
+//  MAIN START 
 
-   //  hero start 
-   //  hero end 
+//  hero start 
+//  hero end 
 
-   //  about start 
-   //  about end 
+//  about start 
+//  about end 
 
-   //  skills start 
-   let menuToggleDOM = document.querySelector('.menuToggle');
+//  skills start 
+let menuToggleDOM = document.querySelector('.menuToggle');
 
 menuToggleDOM.addEventListener('click', () => {
-  menuToggleDOM.classList.toggle('active')
+   menuToggleDOM.classList.toggle('active')
 })
 
-   //  skills end 
+//  skills end 
 
-   //  projects gallery start 
-   //  projects gallery end 
+//  projects gallery start 
+//  projects gallery end 
 
-   //  contact start 
-   const containerDOM = document.querySelector('.contact');
-   const bgDOM = document.querySelector('.bg');
+//  contact start 
+const containerDOM = document.querySelector('.contact');
+const bgDOM = document.querySelector('.bg');
 
-   containerDOM.addEventListener('mousemove', (e) => {
-    bgDOM.style.left = `${e.clientX}px`;
-    bgDOM.style.top = `${e.clientY}px`;
-   })
+containerDOM.addEventListener('mousemove', (e) => {
+   bgDOM.style.left = `${e.clientX}px`;
+   bgDOM.style.top = `${e.clientY}px`;
+})
 
-   //  contact end 
+//  contact end
 
-   //  MAIN END 
+//  MAIN END
 
-   //  footer start 
-   //  footer end 
+//  footer start
+
+//  footer end 
