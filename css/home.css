@@ -10,7 +10,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 2rem 0;
+    background: #222d4f;
+    padding: 20px;
 }
 
 header img {
@@ -30,13 +31,13 @@ header .nav-menu a {
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #22699a;
+    color: #fff;
 }
 
 header .nav-menu a:hover {
     transform: scale(1.2);
     transition: 0.8s;
-    color: #222d4f;
+    color: #fd3b5c;
 }
 
 header .nav-menu a:nth-child(5) {
@@ -65,7 +66,7 @@ header > .burger-menu {
     header > .burger-menu {
         display: block;
         align-items: center;
-        color: #222d4f;
+        color: #fd3b5c;
         font-size: 40px;
         cursor: pointer;
     }
@@ -114,8 +115,9 @@ header > .burger-menu {
     top: 1rem;
     left: 2rem;
     list-style: none;
-    background: rgba(33, 103, 153, 0.554);
+    background: rgb(33, 103, 153);
     padding: 1rem;
+    z-index: 1;
 }
 
 .socials-list-wrapper > .socials-list li {
@@ -125,6 +127,8 @@ header > .burger-menu {
 
 .socials-list li a {
     color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .socials-list li a:hover {
