@@ -39,6 +39,14 @@ menuToggleDOM.addEventListener('click', () => {
    //  projects gallery end 
 
    //  contact start 
+   const containerDOM = document.querySelector('.contact');
+   const bgDOM = document.querySelector('.bg');
+
+   containerDOM.addEventListener('mousemove', (e) => {
+    bgDOM.style.left = `${e.clientX}px`;
+    bgDOM.style.top = `${e.clientY}px`;
+   })
+
    //  contact end 
 
    //  MAIN END 

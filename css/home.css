@@ -4,6 +4,7 @@
 
 /* COMPONENTS */
 @import './components/buttons.css';
+@import './components/hexa-bg.css';
 
 /* Header start */
 header {
@@ -547,6 +548,108 @@ header > .burger-menu {
 /* projects gallery end */
 
 /* contact start */
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contact > .row {
+    z-index: 3;
+}
+
+.contact-form-wrapper form {
+    width: 600px;
+}
+
+.contact .section-title {
+    color: #ff4886;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box .input-field {
+    width: 48.5%;
+}
+
+.field .item {
+    width: 100%;
+    padding: 18px;
+    background: #222d4f;
+    border: 3px solid hsl(350, 39%, 38%);
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: aliceblue;
+    margin: 12px 0;
+}
+
+.field .item::placeholder {
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+
+.field .error-txt {
+    display: none;
+    font-size: 14px;
+    color: #fd3b5c;
+    text-align: left;
+    margin: -5px 0 10px;
+}
+
+form .textarea-field .item {
+    resize: none;
+    background: #222d4f;
+}
+
+form .textarea-field .error-txt {
+    margin-top: -10px;
+}
+
+form .btn {
+    padding: 12px 32px;
+    cursor: pointer;
+    width: 300px;
+    border: none;
+    background: #ff4886;
+    margin-left: 9rem;
+}
+
+@media (max-width: 992px) {
+    .contact {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact .section-title {
+        text-align: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrapper form {
+        width: 500px;
+    }
+    form .btn {
+        margin-left: 6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-wrapper form {
+        width: 100%;
+    }
+    form .btn {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
 /* contact end */
 
 /* MAIN END */
