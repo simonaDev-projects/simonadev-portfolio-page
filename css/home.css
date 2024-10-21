@@ -674,6 +674,10 @@ form .btn {
     font-size: 1.6rem;
 }
 
+/* .footer-text small img {
+    width: 100px;
+} */
+
 .footer-iconTop > a {
     display: inline-flex;
     justify-content: center;
