@@ -29,6 +29,7 @@ class Gallery {
       }
       this.filterDataForRendering();
       this.render();
+      this.enableFilter();
    }
 
    // Selectoriaus validavimas:
@@ -174,12 +175,28 @@ class Gallery {
    }
 
    generateFilter() {
-      return `
-      <button class="option">Web pages</button>
-      <button class="option">Logos</button>
-      <button class="option">Others</button>
-      
-      `
+      const tags = this.dataForRendering
+         .map(item => item.tag)
+         .reduce((total, item) => [...total, ...item], []);
+
+      // console.log(tags);
+
+      const unique = [];
+
+      for (const tag of tags) {
+         if (!unique.includes(tag)) {
+            unique.push(tag);
+         }
+         console.log(unique);
+      }
+
+      // trumpesnis uzrasymo variantas butu:
+      // const unique = new Set(tags);
+      // console.log(unique);
+
+      const HTML = unique.map(tag => `<button class="option">${tag}</button>`).join('');
+
+      return HTML;
    }
 
    generateContent(item) {
@@ -219,6 +236,40 @@ class Gallery {
 `;
 
       this.DOM.innerHTML = HTML;
+   }
+
+   enableFilter() {
+      const buttonDOM = this.DOM.querySelectorAll('.filter > .option');
+      const itemsDOM = this.DOM.querySelectorAll('.gallery > .item');
+
+
+      for (const button of buttonDOM) {
+         button.addEventListener('click', () => {
+            const tag = button.innerText;
+
+            if (tag === 'All') {
+               // visus rodome:
+               for (const item of itemsDOM) {
+                  item.classList.remove('hidden');
+               }
+            } else {
+               // dali rodome, dali slepiame:
+               for (let i = 0; i < this.dataForRendering.length; i++) {
+                  const itemDOM = itemsDOM[i];
+                  const data = this.dataForRendering[i];
+
+                  if (data.tag.includes(tag)) {
+                     itemDOM.classList.remove('hidden');
+                  } else {
+                     itemDOM.classList.add('hidden');
+                  }
+               }
+            }
+
+            console.log(button.innerText);
+         })
+      }
+      console.log(itemsDOM);
    }
 }
 
