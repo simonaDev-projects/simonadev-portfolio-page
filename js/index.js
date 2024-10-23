@@ -1,4 +1,9 @@
+import { Gallery } from "./components/gallery/Gallery.js";
+import { portfilioData } from "./data/portfolioData.js";
 //  Header start 
+
+
+
 // Toggle burger menu button
 const burgerMenuDOM = document.getElementById('burger-menu');
 const burgerIconDOM = document.querySelector('.burger-menu i');
@@ -36,6 +41,8 @@ menuToggleDOM.addEventListener('click', () => {
 //  skills end 
 
 //  projects gallery start 
+const gallery = new Gallery('#portfolio_block', portfilioData);
+console.log(gallery);
 //  projects gallery end 
 
 //  contact start 
