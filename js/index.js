@@ -41,8 +41,8 @@ menuToggleDOM.addEventListener('click', () => {
 //  skills end 
 
 //  projects gallery start 
-const gallery = new Gallery('#portfolio_block', portfilioData);
-console.log(gallery);
+new Gallery('#portfolio_block', portfilioData);
+
 //  projects gallery end 
 
 //  contact start 
