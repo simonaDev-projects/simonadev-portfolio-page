@@ -32,7 +32,7 @@ const portfilioData = {
       },
       {
          published: true,
-         img: "Logo-14.jpg",
+         img: "./img/portfolio/portfolio-item.jpg",
          alt: "portfolio image",
          title: "Second project",
          description: "This is second project",
@@ -42,7 +42,7 @@ const portfilioData = {
       },
       {
          published: true,
-         img: "portfolio-item.jpg",
+         img: "./img/portfolio/portfolio-item.jpg",
          alt: "portfolio image",
          title: "Third project",
          description: "This is third project",
@@ -52,7 +52,7 @@ const portfilioData = {
       },
       {
          published: true,
-         img: "portfolio-item.jpg",
+         img: "./img/portfolio/portfolio-item.jpg",
          alt: "portfolio image",
          title: "Fourth project",
          description: "This is fourth project",
