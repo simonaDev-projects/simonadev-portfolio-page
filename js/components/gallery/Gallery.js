@@ -116,12 +116,53 @@ class Gallery {
       return dataCopy;
    }
 
+   generateFilter() {
+      return `
+      <button class="option">Web pages</button>
+      <button class="option">Logos</button>
+      <button class="option">Others</button>
+      
+      `
+   }
+
+   generateContent(item) {
+      let HTML = '';
+
+      for (const item of this.dataForRendering) {
+         if (item.published !== true) {
+            return '';
+         }
+
+         HTML += `<div class="col-12 item">
+         <img src="./img/portfolio/portfolio-item.jpg" alt="project item background photo">
+         <div class="portfolio-layer">
+            <h3 class="portfolio-title">Title</h3>
+            <p class="portfolio-description">Item description</p>
+            <small class="tag">#itemTag</small>
+            <div class="btn-container">
+               <a href="#" class="btn" target="_blank">Code</a>
+               <a href="#" class="btn" target="_blank">Project</a>
+            </div>
+         </div>
+      </div>`
+      }
+
+      return HTML;
+   }
+
 
    render() {
       // render paskirtis - i rasta ivieta ispiesti HTML turini
-      let HTML = '';
+      let HTML = `
+      <div class="filter">
+      <button class="option active">All</button>
+      ${this.generateFilter()}
+      </div>
 
-      console.log(this.dataForRendering);
+      <div class="gallery" id="gallery">
+         ${this.generateContent()}
+      </div> 
+`;
 
       this.DOM.innerHTML = HTML;
    }

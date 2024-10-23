@@ -399,8 +399,11 @@ header > .burger-menu {
     background-size: cover;
     color: aliceblue;
 }
-
-.portfolio .portfolio-container {
+div#portfolio_block {
+    display: flex;
+    flex-direction: column;
+}
+.portfolio .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -512,7 +515,7 @@ header > .burger-menu {
     .portfolio .item {
         width: 350px;
     }
-    .portfolio .portfolio-container {
+    .portfolio .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
@@ -528,7 +531,7 @@ header > .burger-menu {
 }
 
 @media (max-width: 768px) {
-    .portfolio .portfolio-container {
+    .portfolio .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
     .portfolio .item {
