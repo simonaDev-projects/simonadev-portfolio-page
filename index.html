@@ -17,6 +17,16 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet">
    <title>SimonaDev portfolio</title>
+
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+   </script>
+   <script type="text/javascript">
+      (function () {
+         emailjs.init({
+            publicKey: "885c7yCdP2fOX212V",
+         });
+      })();
+   </script>
 </head>
 
 <body>
@@ -158,28 +168,33 @@
       </div>
 
       <div class="row contact-form-wrapper">
-         <form action="#">
+         <form action="#" id="contact-form">
             <div class="input-box">
                <div class="input-fiels field">
-                  <input type="text" placeholder="First Name" id="name" class="item" autocomplete="off">
+                  <input type="text" placeholder="User Name" id="username" class="item" autocomplete="off">
+                  <span class="error-txt"></span>
                </div>
                <div class="input-fiels field">
                   <input type="text" placeholder="Email" id="email" class="item" autocomplete="off">
+                  <span class="error-txt"></span>
                </div>
             </div>
             <div class="input-box">
                <div class="input-fiels field">
-                  <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off">
+                  <input type="text" placeholder="Phone number 370.." id="phone" class="item" autocomplete="off">
+                  <span class="error-txt"></span>
                </div>
                <div class="input-fiels field">
                   <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+                  <span class="error-txt"></span>
                </div>
             </div>
             <div class="textarea-field field">
                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message" class="item"
                   autocomplete="off"></textarea>
+               <span class="error-txt"></span>
             </div>
-            <button type="submit" class="btn">Send message</button>
+            <button type="submit" class="btn" id="submit">Send message</button>
          </form>
       </div>
    </section>

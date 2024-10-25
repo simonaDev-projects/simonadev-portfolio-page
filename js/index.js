@@ -1,5 +1,10 @@
+
+import { form } from "./components/form/formF.js";
 import { Gallery } from "./components/gallery/Gallery.js";
+
 import { portfilioData } from "./data/portfolioData.js";
+// import { form } from "../js/components/form/form.js";
+
 //  Header start 
 
 
@@ -52,6 +57,37 @@ const bgDOM = document.querySelector('.bg');
 containerDOM.addEventListener('mousemove', (e) => {
    bgDOM.style.left = `${e.clientX}px`;
    bgDOM.style.top = `${e.clientY}px`;
+})
+
+form();
+
+function sendMail() {
+   let params = {
+      name: document.getElementById("username").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+   };
+   const serviceID = "service_4se1351";
+   const templateID = "template_ngwq6rr";
+
+   emailjs.send(serviceID, templateID, params)
+      .then(res => {
+         document.getElementById("username").value = "";
+         document.getElementById("email").value = "";
+         document.getElementById("phone").value = "";
+         document.getElementById("subject").value = "";
+         document.getElementById("message").value = "";
+         console.log(res);
+         alert("Your message was sent successfully");
+      })
+      .catch((err) => console.log(err));
+}
+
+const sendButtonDOM = document.querySelector('#submit');
+sendButtonDOM.addEventListener('click', () => {
+   sendMail();
 })
 
 //  contact end
