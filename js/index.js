@@ -1,13 +1,9 @@
-
-import { form } from "./components/form/formF.js";
+import { EmailForm } from "./components/form/EmailForm.js";
 import { Gallery } from "./components/gallery/Gallery.js";
-
+import { formData } from "./data/formData.js";
 import { portfilioData } from "./data/portfolioData.js";
-// import { form } from "../js/components/form/form.js";
 
 //  Header start 
-
-
 
 // Toggle burger menu button
 const burgerMenuDOM = document.getElementById('burger-menu');
@@ -59,7 +55,7 @@ containerDOM.addEventListener('mousemove', (e) => {
    bgDOM.style.top = `${e.clientY}px`;
 })
 
-form();
+new EmailForm('#contact-form', formData);
 
 function sendMail() {
    let params = {

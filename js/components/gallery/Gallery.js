@@ -40,7 +40,6 @@ class Gallery {
 
       this.DOM = document.querySelector(this.selector);
       return this.DOM === null ? false : true;
-      // trumpiausias uzrasymas: return !!this.DOM
    }
 
    // Duomenu validavimas:
@@ -58,12 +57,10 @@ class Gallery {
          if (IsValid.positiveInteger(min)) {
             this.size.min = min;
          }
-
          if (IsValid.positiveInteger(max)) {
             this.size.max = max;
          }
       }
-
 
       // Validuojam this.data.rendering:
       if (!IsValid.object(rendering)) {
@@ -71,27 +68,23 @@ class Gallery {
          if (IsValid.positiveInteger(min)) {
             this.rendering.strategy = strategy;
          }
-
          if (IsValid.positiveInteger(order)) {
             this.rendering.order = order;
          }
       }
+
       // Validuojam this.data.content:
       if (!IsValid.nonEmptyArray(content)) {
          return false;
       }
 
-      // const validData = [];
-      // for (const item of content) {
-      //    if (this.isValidGalleryItem(item)) {
-      //       validData.push(item);
-      //    }
-      // }
-
-      // content = validData;
-
-      // Trumpesnis uzrasymo budas:
-      content = content.filter(this.isValidGalleryItem.bind(this))
+      const validData = [];
+      for (const item of content) {
+         if (this.isValidGalleryItem(item)) {
+            validData.push(item);
+         }
+      }
+      content = validData;
       return true;
    }
 
@@ -102,11 +95,9 @@ class Gallery {
       if (strategy === 'entry') {
          this.dataForRendering = this.filterDataByEntry(order)
       }
-
       if (strategy === 'title') {
          this.dataForRendering = this.filterDataByTitle(order)
       }
-
       if (strategy === 'random') {
          this.dataForRendering = this.filterDataByTitle(order)
       }
@@ -131,7 +122,6 @@ class Gallery {
 
    // Metodai patikrinantys kiekviena item objekto sudedamaja dali:
    isValidGalleryItemImage(str) {
-
       return true;
    }
 
@@ -179,23 +169,15 @@ class Gallery {
          .map(item => item.tag)
          .reduce((total, item) => [...total, ...item], []);
 
-      // console.log(tags);
-
       const unique = [];
 
       for (const tag of tags) {
          if (!unique.includes(tag)) {
             unique.push(tag);
          }
-         console.log(unique);
       }
 
-      // trumpesnis uzrasymo variantas butu:
-      // const unique = new Set(tags);
-      // console.log(unique);
-
       const HTML = unique.map(tag => `<button class="option">${tag}</button>`).join('');
-
       return HTML;
    }
 
@@ -217,7 +199,6 @@ class Gallery {
          </div>
       </div>`
       }
-
       return HTML;
    }
 
@@ -229,19 +210,16 @@ class Gallery {
       <button class="option active">All</button>
       ${this.generateFilter()}
       </div>
-
       <div class="gallery" id="gallery">
          ${this.generateContent()}
       </div> 
 `;
-
       this.DOM.innerHTML = HTML;
    }
 
    enableFilter() {
       const buttonDOM = this.DOM.querySelectorAll('.filter > .option');
       const itemsDOM = this.DOM.querySelectorAll('.gallery > .item');
-
 
       for (const button of buttonDOM) {
          button.addEventListener('click', () => {
@@ -266,10 +244,8 @@ class Gallery {
                }
             }
 
-            console.log(button.innerText);
          })
       }
-      console.log(itemsDOM);
    }
 }
 

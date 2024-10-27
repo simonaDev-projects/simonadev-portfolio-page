@@ -621,7 +621,7 @@ form .textarea-field .error-txt {
     margin-top: -10px;
 }
 
-form .btn {
+.contact-form-wrapper .btn {
     padding: 12px 32px;
     cursor: pointer;
     width: 300px;

@@ -21,6 +21,8 @@
     transform: translate(-50%, -50%);
     height: 250px;
     width: 250px;
+    border-radius: 50%;
+    filter: blur(70%);
     background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
     filter: blur(10px);
     z-index: 0;
