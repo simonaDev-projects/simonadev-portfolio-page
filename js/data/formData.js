@@ -22,14 +22,6 @@ const formData = {
       }
    ],
 
-   inputValues: {
-      name: "Ona",
-      email: "ona@ona.lt",
-      phone: "+370 612 34567",
-      subject: "Test",
-      message: "This is test from Ona...",
-   }
-
 };
 
 export { formData };

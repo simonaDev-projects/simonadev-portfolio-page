@@ -5,9 +5,8 @@ class EmailForm {
       this.selector = selector;
       this.data = data;
 
-      this.DOM = null;
+      this.FORM = null;
       this.init();
-
    }
 
    init() {
@@ -15,14 +14,15 @@ class EmailForm {
          return false;
       }
       this.render();
+      this.addEventListeners();
    }
 
    isValidSelector() {
       if (!IsValid.nonEmptyString(this.selector)) {
          return false;
       }
-      this.DOM = document.querySelector(this.selector);
-      return this.DOM === null ? false : true
+      this.FORM = document.querySelector(this.selector);
+      return this.FORM === null ? false : true
    }
 
    isValidData() {
@@ -31,7 +31,6 @@ class EmailForm {
       if (!IsValid.object(data)) {
          return false;
       }
-
       return true;
    }
 
@@ -44,17 +43,16 @@ class EmailForm {
 
    render() {
       const fields = this.data.fields
-
       const inputFieldsHTML = fields.map(item => this.generateField(item));
 
       let HTML = `     
          <div class="input-box">
-            ${inputFieldsHTML[0]}  <!-- User Name -->
-            ${inputFieldsHTML[1]}  <!-- Email -->
+            ${inputFieldsHTML[0]}  
+            ${inputFieldsHTML[1]}  
          </div>
          <div class="input-box">
-            ${inputFieldsHTML[2]}  <!-- Phone number -->
-            ${inputFieldsHTML[3]}  <!-- Subject -->
+            ${inputFieldsHTML[2]}  
+            ${inputFieldsHTML[3]} 
          </div>
          <div class="textarea-field field">
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message"
@@ -62,7 +60,15 @@ class EmailForm {
             <span class="error-txt"></span>
          </div>`;
 
-      this.DOM.innerHTML = HTML;
+      this.FORM.innerHTML = HTML;
+   }
+
+   addEventListeners() {
+      console.log(this.FORM);
+      const fields = this.FORM.querySelectorAll('.item');
+
+      // Gaunami visi formos elementai. Dabar reikia suvaliduoti kiekviena atskirai
+      console.log(fields);
    }
 }
 

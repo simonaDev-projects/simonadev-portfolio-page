@@ -83,6 +83,8 @@ function sendMail() {
 
 const sendButtonDOM = document.querySelector('#submit');
 sendButtonDOM.addEventListener('click', () => {
+
+
    sendMail();
 })
 

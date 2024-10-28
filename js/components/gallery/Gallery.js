@@ -9,7 +9,7 @@ class Gallery {
 
       this.size = {
          min: 3,
-         max: 4
+         max: 10
       };
 
       this.rendering = {
