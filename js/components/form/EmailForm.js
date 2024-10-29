@@ -1,4 +1,6 @@
+import { sendMail } from "../../index.js";
 import { IsValid } from "../isValid/IsValid.js";
+
 
 class EmailForm {
    constructor(selector, data) {
@@ -82,10 +84,6 @@ class EmailForm {
 
       const msgDOM = this.FORM.querySelectorAll('.error-txt');
 
-      console.log(msgDOM);
-
-      console.log(fields[0].value);
-
       const isValid = {
          string: (str) => typeof str === 'string' && str.trim() !== '',
          minSize: (str, size) => str.length >= size,
@@ -96,7 +94,6 @@ class EmailForm {
          subject: (str) => isValid.string(str) && isValid.minSize(str, 4) && isValid.maxSize(str, 50),
          message: (str) => isValid.string(str),
       }
-
 
       if (submitDOM) {
          function submitForm(e) {
@@ -149,18 +146,13 @@ class EmailForm {
             }
 
             if (usernameValid && emailValid && phoneValid && subjectValid && messageValid) {
-
+               sendMail();
             }
          }
 
-         submitDOM.addEventListener("click", submitForm)
+         submitDOM.addEventListener("click", submitForm);
+
       }
-
-
-
-
-      // Gaunami visi formos elementai. Dabar reikia suvaliduoti kiekviena atskirai
-
 
       this.FORM.appendChild(submitDOM);
       this.FORM.fields.insertAdjacentHTML('beforeend', msgDOM);

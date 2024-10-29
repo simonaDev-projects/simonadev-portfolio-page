@@ -57,7 +57,7 @@ containerDOM.addEventListener('mousemove', (e) => {
 
 new EmailForm('#contact-form', formData);
 
-function sendMail() {
+export function sendMail() {
    let params = {
       name: document.getElementById("username").value,
       email: document.getElementById("email").value,
@@ -81,12 +81,12 @@ function sendMail() {
       .catch((err) => console.log(err));
 }
 
-const sendButtonDOM = document.querySelector('#submit');
-sendButtonDOM.addEventListener('click', () => {
+// const sendButtonDOM = document.querySelector('#submit');
+// sendButtonDOM.addEventListener('click', () => {
 
 
-   sendMail();
-})
+
+// })
 
 //  contact end
 
