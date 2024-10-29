@@ -75,9 +75,14 @@ class EmailForm {
 
       console.log(this.FORM);
       const fields = this.FORM.querySelectorAll('.item');
+
       const submitDOM = document.createElement('button');
       submitDOM.classList.add('btn');
       submitDOM.innerText = "Send message";
+
+      const msgDOM = this.FORM.querySelectorAll('.error-txt');
+
+      console.log(msgDOM);
 
       console.log(fields[0].value);
 
@@ -86,9 +91,9 @@ class EmailForm {
          minSize: (str, size) => str.length >= size,
          maxSize: (str, size) => str.length <= size,
          username: (str) => isValid.string(str) && isValid.minSize(str, 3) && isValid.maxSize(str, 20),
-         email: (str) => isValid.string(str) && isValid.minSize(str, 6) && isValid.maxSize(str, 50) && str.includes('@'),
+         email: (str) => isValid.string(str) && isValid.minSize(str, 6) || isValid.maxSize(str, 50) && str.includes('@'),
          phone: (str) => isValid.string(str),
-         subject: (str) => isValid.string(str) && isValid.minSize(str, 10) && isValid.maxSize(str, 50),
+         subject: (str) => isValid.string(str) && isValid.minSize(str, 4) && isValid.maxSize(str, 50),
          message: (str) => isValid.string(str),
       }
 
@@ -104,27 +109,47 @@ class EmailForm {
             const messageValid = isValid.message(fields[4].value);
 
             if (!usernameValid) {
-               console.log('Blogas username');
+               msgDOM[0].innerText = 'The name is incorrect';
+               fields[0].classList.remove('correctly');
+            } else {
+               msgDOM[0].innerText = '';
+               fields[0].classList.add('correctly');
             }
 
             if (!emailValid) {
-               console.log('Blogas email adresas');
+               msgDOM[1].innerText = 'Invalid email address';
+               fields[1].classList.remove('correctly');
+            } else {
+               msgDOM[1].innerText = '';
+               fields[1].classList.add('correctly');
             }
 
             if (!phoneValid) {
-               console.log('Blogas telefono numeris');
+               msgDOM[2].innerText = 'Invalid phone number';
+               fields[2].classList.remove('correctly');
+            } else {
+               msgDOM[2].innerText = '';
+               fields[2].classList.add('correctly');
             }
 
             if (!subjectValid) {
-               console.log('Negeras pavadinimas');
+               msgDOM[3].innerText = 'This format is invalid';
+               fields[3].classList.remove('correctly');
+            } else {
+               msgDOM[3].innerText = '';
+               fields[3].classList.add('correctly');
             }
 
             if (!messageValid) {
-               console.log('Zinuteje yra klaidu');
+               msgDOM[4].innerText = 'The message contains data in an invalid format';
+               fields[4].classList.remove('correctly');
+            } else {
+               msgDOM[4].innerText = '';
+               fields[4].classList.add('correctly');
             }
 
             if (usernameValid && emailValid && phoneValid && subjectValid && messageValid) {
-               fields.classList.add('correctly')
+
             }
          }
 
@@ -138,6 +163,8 @@ class EmailForm {
 
 
       this.FORM.appendChild(submitDOM);
+      this.FORM.fields.insertAdjacentHTML('beforeend', msgDOM);
+
    }
 }
 
