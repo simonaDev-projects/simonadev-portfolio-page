@@ -151,8 +151,10 @@ class EmailForm {
          }
 
          submitDOM.addEventListener("click", submitForm);
-
       }
+
+      //Galbut iterpti setTimeout arba reset funkcionaluma, kad forma po submitinimo nusiresetintu
+
 
       this.FORM.appendChild(submitDOM);
       this.FORM.fields.insertAdjacentHTML('beforeend', msgDOM);
