@@ -81,13 +81,6 @@ export function sendMail() {
       .catch((err) => console.log(err));
 }
 
-// const sendButtonDOM = document.querySelector('#submit');
-// sendButtonDOM.addEventListener('click', () => {
-
-
-
-// })
-
 //  contact end
 
 //  MAIN END
