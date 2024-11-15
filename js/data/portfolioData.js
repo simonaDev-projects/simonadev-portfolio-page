@@ -67,7 +67,7 @@ const portfilioData = {
          title: "E-shop",
          description: "This is full-stack web page with react, next.js & mongo DB",
          tag: ["Web page"],
-         linkToCode: "https://github.com/simonasablinaite/mr-ecommerce-website",
+         linkToCode: "https://github.com/simonasablinaite/mr-ecommerce-website/tree/master/frontend",
          linkToProject: "#"
       },
 
