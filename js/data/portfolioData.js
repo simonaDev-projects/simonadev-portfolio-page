@@ -70,6 +70,17 @@ const portfilioData = {
          linkToCode: "https://github.com/simonasablinaite/mr-ecommerce-website",
          linkToProject: ""
       },
+      {
+         published: true,
+         img: "./img/portfolio/Gaivita vizualas-3.jpg",
+         alt: "gaivita logotipo vizualas",
+         title: '"Gaivita" logo redrawing',
+         description: "According to the requirements and the photo on the left, the logo was redrawn",
+         tag: ["Logo"],
+         linkToCode: "",
+         linkToProject: ""
+      },
+
 
    ],
 
