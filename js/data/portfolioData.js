@@ -80,7 +80,16 @@ const portfilioData = {
          linkToCode: "",
          linkToProject: ""
       },
-
+      {
+         published: true,
+         img: "./img/portfolio/Logo-14.jpg",
+         alt: "gaivita logotipo vizualas",
+         title: '"MinėMi fotografija" logo design',
+         description: "Logo design created for a photographer",
+         tag: ["Logo"],
+         linkToCode: "#",
+         linkToProject: "#"
+      },
 
    ],
 
