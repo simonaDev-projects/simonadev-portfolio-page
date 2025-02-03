@@ -22,13 +22,23 @@ const portfilioData = {
    content: [
       {
          published: true,
+         img: "img/portfolio/music-player.jpg",
+         alt: "Music player",
+         title: 'Music player with JS',
+         description: "It is a multi-song music player with essential functionalities",
+         tag: ["Other"],
+         linkToCode: "#",
+         linkToProject: "#"
+      },
+      {
+         published: true,
          img: "./img/portfolio/portfolio-item.jpg",
          alt: "portfoli img",
          title: "Calculator project",
          description: "This is calculator project. I learned how the onclick method works",
          tag: ["Other"],
-         linkToCode: "https://github.com/simonasablinaite/calculator-project",
-         linkToProject: "https://simonasablinaite.github.io/calculator-project/"
+         linkToCode: "https://github.com/simonasablinaite/music-player-js",
+         linkToProject: "https://simonasablinaite.github.io/music-player-js/"
       },
       {
          published: true,
